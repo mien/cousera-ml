@@ -14,7 +14,7 @@ function centroids = computeCentroids(X, idx, K)
 [m n] = size(X);
 
 % You need to return the following variables correctly.
-centroids = zeros(K, n);
+centroids = zeros(K, n)
 
 
 % ====================== YOUR CODE HERE ======================
@@ -28,10 +28,11 @@ centroids = zeros(K, n);
 
 
 
-
-
-
-
+for i=1:K
+	mask_idx = idx==i;
+	no_of_centroid = sum(mask_idx);
+	mean_centroid = sum(mask_idx .* X)./no_of_centroid;
+	centroids(i,:) = mean_centroid;
 
 % =============================================================
 

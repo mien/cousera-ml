@@ -20,10 +20,9 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
+for j=1:length(X)
+	[val,idx(j)] = min(sum((centroids.-X(j,:)).^2,2));
+end;
 
 
 
